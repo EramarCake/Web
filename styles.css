@@ -14,6 +14,10 @@
 		border: solid 2px;
 		border-color: #ffad23; 
 	}
+	.combos{
+		border: solid 2px;
+		border-color: #ffad23; 
+	}
 	
 }
 
@@ -27,6 +31,11 @@
 		height: 250px;
 		border: solid 3px;
 		border-color: #ffad23; 
+	}
+
+	.combos{
+		border: solid 3px;
+		border-color: gold; 
 	}
 
 }
