@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eramar Cake System</title>
+	<link rel="shortcut icon" href="Logo.png" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<header><img src="Fondo.png" style="width: 100%; height: 100vh; position: fixed; top: 0px; left: 0px; z-index: -1;"></header>
+<body style="font-family: 'Poppins', sans-serif;
+;
+">
+
+	<nav class="navbar navbar-expand-lg navbar-light ">
+		  <a class="navbar-brand" href="#"><img src="Logo.png" style="width: 10vh;"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"  style="background: white;">
+		    <span class="navbar-toggler-icon"></span>
+	      </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		    	 <li class="nav-item dropdown  justify-content-end">
+		        <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Agregar Productos
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		           <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#Menus"> Menus </a>
+		          <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#Promociones"> Combos</a>
+		          <div class="dropdown-divider"></div>
+		        </div>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a style="color: white;"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Editar Productos
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		           <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#MenusE"> Menus </a>
+		          <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#PromocionesE"> Combos</a>
+		          <div class="dropdown-divider"></div>
+		        </div>
+		      </li>
+		      <li class="nav-item">
+		      	<a style="color: white;" class="nav-link" href="#"  data-toggle="modal" data-target="#Soporte"> Soporte CAM </a>
+		      </li>
+		    </ul>
+		  </div>
+	</nav>
+
+	<!-- Modals -->
+
+<!-- Combos -->
+<div class="modal fade" id="Promociones" tabindex="-1" role="dialog" aria-labelledby="Promociones" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Combos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Nombre</label>
+       		<input type="text" name="NombreC" id="AGMNombreC" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Costo</label>
+       		<input type="text" name="CostoC" id="AGMCostoC" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Descripción</label>
+       		<input type="text" name="DetallesC" id="AGMDetallesC" class="form-control  ">
+       	</div>	
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="NuevosD()">Actualizar Datos</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- Menus Nuevo-->
+<div class="modal fade" id="Menus" tabindex="-1" role="dialog" aria-labelledby="MenusE" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Menus</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Sección</label>
+       		<select class="form-control" id="AGMSeccion">
+			  <option value="Desayunos">Desayunos</option>
+			  <option value="Almuerzos">Almuerzos</option>
+			  <option value="Bebidas">Bebidas</option>
+			  <option value="Postres">Postres</option>
+			</select>
+       	</div>	
+        <div class="container w-75 mx-auto mt-3">
+     		<label for="">Nombre</label>
+       		<input type="text" name="Mnombre" id="AGMNombre" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Costo</label>
+       		<input type="text" name="MCosto" id="AGMCosto" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Descripción</label>
+       		<input type="text" name="MDetalles" id="AGMDetalles" class="form-control  ">
+       	</div>	
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="NuevosD()">Actualizar Datos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Menus Editable-->
+<div class="modal fade" id="MenusE" tabindex="-1" role="dialog" aria-labelledby="Menus" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Menus</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Sección</label>
+       		<select class="form-control" id="AGMSeccionE">
+			  <option value="Desayunos">Desayunos</option>
+			  <option value="Almuerzos">Almuerzos</option>
+			  <option value="Bebidas">Bebidas</option>
+			  <option value="Postres">Postres</option>
+			</select>
+       	</div>	
+        <div class="container w-75 mx-auto mt-3">
+     		<label for="">Nombre</label>
+       		<input type="text" name="Mnombre" id="AGMNombreE" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Costo</label>
+       		<input type="text" name="MCosto" id="AGMCostoE" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Descripción</label>
+       		<input type="text" name="MDetalles" id="AGMDetallesE" class="form-control  ">
+       	</div>	
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" onclick="EliminarD()" >Eliminar Datos</button>
+        <button type="button" class="btn btn-primary" onclick="EditarD()">Actualizar Datoss</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Combos Editables  -->
+<div class="modal fade" id="PromocionesE" tabindex="-1" role="dialog" aria-labelledby="PromocionesE" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Combos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Nombre</label>
+       		<input type="text" name="NombreC" id="AGMNombreEC" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Costo</label>
+       		<input type="text" name="CostoC" id="AGMCostoEC" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Descripción</label>
+       		<input type="text" name="DetallesC" id="AGMDetallesEC" class="form-control  ">
+       	</div>	
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" onclick="EliminarD()" >Eliminar Datos</button>
+        <button type="button" class="btn btn-primary" onclick="EditarD()">Actualizar Datos</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!-- Soporte -->
+<div class="modal fade" id="Soporte" tabindex="-1" role="dialog" aria-labelledby="Soporte" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Soporte CAM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" >Actualizar Datos</button>
+      </div>
+    </div>
+  </div>
+</div> 
+	<div style="color: white;"  id="fecha"  class="d-flex mb-3 w-50 mx-auto text-center">
+		  <div class="p-2 bd-highlight mx-auto">
+		  	
+		  	<input class=" form-control " type="date"  aria-label="date" style="margin-right: 0px;">
+		  </div>
+  			<div class="p-2 bd-highlight mx-auto">
+
+  			 <button class="btn btn-outline-success mx-auto" style="color: white;" type="submit">Fecha a Consultar</button>
+  			</div>
+  			<div class="form-check form-check-inline text-center mx-auto">
+	  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+	  <label class="form-check-label" for="inlineCheckbox1"><small>Aprobado</small></label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+	  <label class="form-check-label" for="inlineCheckbox2"><small>Cancelado</small></label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+	  <label class="form-check-label" for="inlineCheckbox3"><small>En Proceso</small></label>
+	</div>
+	</div>
+
+	 
+    
+    
+	<div class="container text-center mt-3">
+		<h4 class=" mx-auto p-2" style="background: orange; width: 70%; margin-bottom: 0px;">Tabla de Encargos</h4>
+		<table  id="Pedidos" class="table mx-auto" style=" width: 70%;">
+			
+		  <thead class="" style="background: white;">
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Día</th>
+		      <th scope="col">Costo</th>
+		      <th scope="col">Proceso</th>
+		    </tr>
+		  </thead>
+		  <tbody style="color: white;">
+		    <tr>
+		      <th scope="row">451</th>
+		      <td>14/05/2019</td>
+		      <td>450$</td>
+		      <td>En proceso</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">424</th>
+		      <td>15/04/2019</td>
+		      <td>10$</td>
+		      <td>Aprobado</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">144</th>
+		      <td>15/06/2019</td>
+		      <td>50$</td>
+		      <td>Cancelado</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">451</th>
+		      <td>14/05/2019</td>
+		      <td>450$</td>
+		      <td>En proceso</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">424</th>
+		      <td>15/04/2019</td>
+		      <td>10$</td>
+		      <td>Aprobado</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">144</th>
+		      <td>15/06/2019</td>
+		      <td>50$</td>
+		      <td>Cancelado</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC_pCTn1JIYdSgtn-WVfTolrFj-0dzIBqU",
+    authDomain: "sistema-e83cf.firebaseapp.com",
+    databaseURL: "https://sistema-e83cf.firebaseio.com",
+    projectId: "sistema-e83cf",
+    storageBucket: "sistema-e83cf.appspot.com",
+    messagingSenderId: "101698543766",
+    appId: "1:101698543766:web:ab404d01955b7309"
+  };
+  // Initialize Firebase
+
+  firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+</script>
+	<script src="../Web/js.js"></script>
+
+</body>
+</html>
