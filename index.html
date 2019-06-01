@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +14,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
-<body style="color: white; font-family: 'Poppins', sans-serif;" id="INICIO">
+<body onload="ConsultaDatos();" onload="CargarTablas();" style="color: white; font-family: 'Poppins', sans-serif;" id="INICIO">
 	
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,13 +127,13 @@
 			<!-- Botones del Modal -->
 		<div class="col d-flex mb-5 ">
 			<div class="text-center mx-auto	 mr-3" >
-			<a data-toggle="modal" data-target="#Desayuno">
+			<a data-toggle="modal" data-target="#Desayuno" id="aDesayuno" onclick="CargarTablasD();">
 			  <img src="desayunos.jpg" class="Menu  rounded">
 			</a>
 			<h4 class="text-center" >Desayuno</h4>
 			</div>
 			<div class="text-center  mx-auto ml-3">
-			<a data-toggle="modal" data-target="#Almuerzo">
+			<a data-toggle="modal" data-target="#Almuerzo" id="aAlmuerzo" onclick="CargarTablasA();" >
 			  <img src="almuerzos.jpg" class="Menu rounded">
 			</a>
 			<h4 class="text-center">Almuerzo</h4>
@@ -141,13 +141,13 @@
 		</div>
 			<div class="col d-flex mb-5">
 			<div class="text-center mx-auto mr-5">
-			<a data-toggle="modal" data-target="#Bebidas">
+			<a data-toggle="modal" data-target="#Bebidas" id="aBebidas" onclick="CargarTablasB();" >
 			  <img src="bebidas.jpg" class="Menu rounded">
 			</a>
 			<h4 class="text-center" >Bebidas</h4>
 			</div>
 			<div class="text-center mx-auto mb-5 ml-3">
-			<a data-toggle="modal" data-target="#Postres">
+			<a data-toggle="modal" data-target="#Postres" id="aPostres" onclick="CargarTablasP();">
 			  <img src="postres.jpg" class="Menu rounded">
 			</a>
 			<h4 class="text-center">Postres</h4>
@@ -167,22 +167,17 @@
 			        </button>
 			      </div>
 			      <div class="modal-body" >
-					<table  class="table" style="color:white;">
-					  <thead>
-					    <tr>
-					      <th scope="col">Codigo de Pedido</th>
-					      <th scope="col">Nombre</th>
-					      <th scope="col">Detalles</th>
-					      <th scope="col">Costo</th>
+					<table  class="table container w-75" style="color:white;">
+					  <thead >
+					    <tr class="w-75">
+					      <th scope="col"><p>Codigo de Pedido</p></th>
+					      <th scope="col"><p>Nombre </p></th>
+					      <th scope="col"><p>Detalles</p></th>
+					      <th scope="col"><p>Costo</p></th>
 					    </tr>
 					  </thead>
-					  <tbody id="TDesayuno">
-					    <tr>
-					      <th scope="row">D1</th>
-					      <td>Mark</td>
-					      <td>Otto</td>
-					      <td>@mdo</td>
-					    </tr>
+					  <tbody id="TDesayuno" >
+					    
 					  </tbody>
 					</table>
 			      </div>
@@ -205,7 +200,19 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        ...
+			        	<table  class="table container w-75" style="color:white;">
+					  <thead >
+					    <tr class="w-75">
+					      <th scope="col"><p>Codigo de Pedido</p></th>
+					      <th scope="col"><p>Nombre </p></th>
+					      <th scope="col"><p>Detalles</p></th>
+					      <th scope="col"><p>Costo</p></th>
+					    </tr>
+					  </thead>
+					  <tbody id="TAlmuerzo" >
+					    
+					  </tbody>
+					</table>
 			      </div>
 			      <div class="modal-footer" style="border: none;">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -226,7 +233,19 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        ...
+			        	<table  class="table container w-75" style="color:white;">
+					  <thead >
+					    <tr class="w-75">
+					      <th scope="col"><p>Codigo de Pedido</p></th>
+					      <th scope="col"><p>Nombre </p></th>
+					      <th scope="col"><p>Detalles</p></th>
+					      <th scope="col"><p>Costo</p></th>
+					    </tr>
+					  </thead>
+					  <tbody id="TBebidas" >
+					    
+					  </tbody>
+					</table>
 			      </div>
 			      <div class="modal-footer" style="border: none">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -247,7 +266,19 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        ...
+			        	<table  class="table container w-75" style="color:white;">
+					  <thead >
+					    <tr class="w-75">
+					      <th scope="col"><p>Codigo de Pedido</p></th>
+					      <th scope="col"><p>Nombre </p></th>
+					      <th scope="col"><p>Detalles</p></th>
+					      <th scope="col"><p>Costo</p></th>
+					    </tr>
+					  </thead>
+					  <tbody id="TPostres" >
+					    
+					  </tbody>
+					</table>
 			      </div>
 			      <div class="modal-footer" style="border: none;">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
