@@ -1,7 +1,7 @@
 var NombreP, CostoP, Seccion, DetallesP, NombreC, CostoC,DetallesC,Protocolo,Datos,Menu = new Array(100);
 var i = 0;
 function NuevosD(){
-	
+
 
 	ConsultaDatos();
 
@@ -9,9 +9,7 @@ function NuevosD(){
 	Seccion = document.getElementById('AGMSeccion').value.toString();
 	CostoP = document.getElementById('AGMCosto').value.toString();
 	DetallesP = document.getElementById('AGMDetalles').value.toString();
-	NombreC = document.getElementById('AGMNombreC').value.toUpperCase().toString();
-	CostoC = document.getElementById('AGMCostoC').value.toString();
-	DetallesC = document.getElementById('AGMDetallesC').value.toString();
+
 
 	
 	//Agregar Un Plato al Menú
@@ -43,8 +41,14 @@ function NuevosD(){
 	    console.log("Error getting document:", error);
 	});
 
+}	
 
-	if (NombreC != "") {
+ 
+}
+function NuevoCombo(){
+		NombreC = document.getElementById('AGMNombreC').value.toUpperCase().toString();
+	CostoC = document.getElementById('AGMCostoC').value.toString();
+	DetallesC = document.getElementById('AGMDetallesC').value.toString();
 		Seccion = "Combos";
 		var docRef = db.collection("Menu").doc(NombreC);
 		docRef.get().then(function(doc) {
@@ -54,6 +58,7 @@ function NuevosD(){
 	        console.log("Este Producto ya existe");
 	    } else {
 	    	Datos = [NombreC,CostoC,DetallesC,Seccion];
+	    	Menu = Datos;
 	    	docRef.set({
 
 					 	Datos
@@ -72,9 +77,7 @@ function NuevosD(){
 	    console.log("Error getting document:", error);
 	});
 	}
- }
 	
-}	
 
 
 function EditarD(){
@@ -317,5 +320,38 @@ var	tdc = document.createElement("td");
 	}
 }
 var control = document.getElementById("aBebidas").onclick = "";
+
+}
+
+function CargarTablasC(){
+	
+
+
+	var Tabla = document.getElementById("TCombos");
+	
+	for ( a = 0; a < i ; a++) {
+	
+	if (Menu[a].Datos[3] == "Combos") {
+var textn = document.createTextNode(Menu[a].Datos[0]);
+var textd = document.createTextNode(Menu[a].Datos[2]);
+var textc = document.createTextNode(Menu[a].Datos[1]);
+var	tr = document.createElement("tr");
+var	th = document.createElement("th");
+var	tdn = document.createElement("td");
+var	tdd = document.createElement("td");
+var	tdc = document.createElement("td");
+	tdn.appendChild(textn);
+	tdd.appendChild(textd);
+	tdc.appendChild(textc);
+	Tabla.appendChild(tr);
+	tr.appendChild(th);
+	tr.appendChild(tdn);
+	tr.appendChild(tdd);
+	tr.appendChild(tdc);
+	
+	
+	}
+}
+var control = document.getElementById("aCombos").onclick = "";
 
 }
