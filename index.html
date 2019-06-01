@@ -56,36 +56,14 @@
 	<p id="PROMOCIONES"></p>
 	<br>
 
-	<h3 class="text-center mt-5" id="">COMBOS</h3>
+	<h3 class="text-center mt-5">COMBOS</h3>
+		<div class="text-center " >
+			<a data-toggle="modal" data-target="#Tcombos" id="aCombos" onclick="CargarTablasC();">
+			  <img src="combo1.jpg" class=" d-block w-25 mx-auto combos rounded">
+			</a>
+		</div>
 
-<div class="bd-example mb-5">
-  <div id="carouselExampleCaptions" class="carousel slide mt-5" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="combo1.jpg" class="d-block w-25 mx-auto combos rounded" alt="...">
-        <br>
-        <h5 class="text-center mb-5">20$</h5>
-        
-      </div>
-      <div class="carousel-item">
-        <img src="combo1.jpg" class="d-block w-25 mx-auto combos rounded" alt="...">
-        <br>
-        <h5 class="text-center mb-5">70$</h5>
-      </div>
-      <div class="carousel-item">
-        <img src="combo1.jpg" class="d-block w-25 mx-auto combos rounded" alt="...">
-        <br>
-        <h5 class="text-center mb-5">30$</h5>
-      </div>
-    </div>
-    
-  </div>
-</div>
+
 	<p id="MENU" ></p>
 	<style type="text/css">
 		@media (min-width: 0px) and (max-width: 450px) { 
@@ -155,6 +133,38 @@
 		</div>
 
 		</div>
+			<!-- Modal Combos -->
+			<div class="modal fade" id="Tcombos" tabindex="-1" role="dialog" aria-labelledby="TCombos1" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
+			      <div class="modal-header" style="border: none;">
+			        <h5 class="modal-title" id="Tcombos1">Combos</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body" >
+					<table  class="table container w-75" style="color:white;">
+					  <thead>
+					    <tr class="w-75">
+					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
+					    </tr>
+					  </thead>
+					  <tbody id="TCombos" >
+					    
+					  </tbody>
+					</table>
+			      </div>
+			      <div class="modal-footer" style="border: none;">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
 			<!-- Modal Desayuno -->
 			<div class="modal fade" id="Desayuno" tabindex="-1" role="dialog" aria-labelledby="DesayunoLabel" aria-hidden="true">
@@ -364,8 +374,7 @@ if (window.screen.width < 700) {
 	document.getElementById('Slogan').setAttribute("class","h4 mx-auto text-center");
 	var x = document.getElementsByClassName("combos");
 	x[0].setAttribute("class","d-block w-50 mx-auto combos");
-	x[1].setAttribute("class","d-block w-50 mx-auto combos");
-	x[2].setAttribute("class","d-block w-50 mx-auto combos");
+
 }
 
 // Your web app's Firebase configuration
