@@ -9,9 +9,7 @@ function NuevosD(){
 	Seccion = document.getElementById('AGMSeccion').value.toString();
 	CostoP = document.getElementById('AGMCosto').value.toString();
 	DetallesP = document.getElementById('AGMDetalles').value.toString();
-	NombreC = document.getElementById('AGMNombreC').value.toUpperCase().toString();
-	CostoC = document.getElementById('AGMCostoC').value.toString();
-	DetallesC = document.getElementById('AGMDetallesC').value.toString();
+
 
 	
 	//Agregar Un Plato al Menú
@@ -48,6 +46,9 @@ function NuevosD(){
  
 }
 function NuevoCombo(){
+		NombreC = document.getElementById('AGMNombreC').value.toUpperCase().toString();
+	CostoC = document.getElementById('AGMCostoC').value.toString();
+	DetallesC = document.getElementById('AGMDetallesC').value.toString();
 		Seccion = "Combos";
 		var docRef = db.collection("Menu").doc(NombreC);
 		docRef.get().then(function(doc) {
@@ -89,9 +90,7 @@ function EditarD(){
 	Seccion = document.getElementById('AGMSeccionE').value.toString();
 	CostoP = document.getElementById('AGMCostoE').value.toString();
 	DetallesP = document.getElementById('AGMDetallesE').value.toString();
-	NombreC = document.getElementById('AGMNombreEC').value.toUpperCase().toString();
-	CostoC = document.getElementById('AGMCostoEC').value.toString();
-	DetallesC = document.getElementById('AGMDetallesEC').value.toString();
+
 	
 	// Set the "capital" field of the city 'DC'
 	if (NombreP != "") {
@@ -123,10 +122,14 @@ function EditarD(){
 	}
  
 
+ }
 
-	if (NombreC != "") {
+ function EditarC(){
+ 		NombreC = document.getElementById('AGMNombreEC').value.toUpperCase().toString();
+	CostoC = document.getElementById('AGMCostoEC').value.toString();
+	DetallesC = document.getElementById('AGMDetallesEC').value.toString();
 
-	Datos = [NombreC,CostoC, DetallesC,"Combos"];
+ 	Datos = [NombreC,CostoC, DetallesC,"Combos"];
 
 	var docRef = db.collection("Menu").doc(NombreC);
 
@@ -152,8 +155,6 @@ function EditarD(){
 	    console.log("Error getting document:", error);
 	});
 	
- 
-	}
  }
 
 function  EliminarD(){

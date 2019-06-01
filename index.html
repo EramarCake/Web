@@ -1,391 +1,327 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Eramar Cake</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Eramar Cake System</title>
 	<link rel="shortcut icon" href="Logo.png" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700,700i,900,900i&display=swap" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
 </head>
-<body onload="ConsultaDatos();" onload="CargarTablas();" style="color: white; font-family: 'Poppins', sans-serif;" id="INICIO">
-	<div id="preloader">
-  <div id="status">&nbsp;</div>
-</div>
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
- 	 </button>
+<header><img src="Fondo.png" style="width: 100%; height: 100vh; position: fixed; top: 0px; left: 0px; z-index: -1;"></header>
+<body style="font-family: 'Poppins', sans-serif;
+;
+">
 
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul id="menu" class="navbar-nav justify-content-center container">
-	    	<style type="text/css">
-	    		li:hover{text-decoration: underline;}
-	    	</style>
-  	    <li class="nav-item active">
- 	       <a class="nav-link" href="#INICIO"> INICIO</a> 
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#PROMOCIONES">COMBOS</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#MENU">MENU</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#CONTACTO">CONTACTO</a>
-	      </li>
-	    </ul>
-	  </div>
+	<nav class="navbar navbar-expand-lg navbar-light ">
+		  <a class="navbar-brand" href="#"><img src="Logo.png" style="width: 10vh;"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"  style="background: white;">
+		    <span class="navbar-toggler-icon"></span>
+	      </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		    	 <li class="nav-item dropdown  justify-content-end">
+		        <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Agregar Productos
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		           <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#Menus"> Menus </a>
+		          <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#Promociones"> Combos</a>
+		          <div class="dropdown-divider"></div>
+		        </div>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a style="color: white;"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Editar Productos
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		           <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#MenusE"> Menus </a>
+		          <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#PromocionesE"> Combos</a>
+		          <div class="dropdown-divider"></div>
+		        </div>
+		      </li>
+		      <li class="nav-item">
+		      	<a style="color: white;" class="nav-link" href="#"  data-toggle="modal" data-target="#Soporte"> Soporte CAM </a>
+		      </li>
+		    </ul>
+		  </div>
 	</nav>
 
-	
-	<img src="Fondo.png" style="position: fixed; z-index: -1;width: 100%; height: 100%;">
-	
-	<div id="Contorno" class="container w-75 text-center p-5  mb-5 section">
-		<img id="logo" src="Logo.png" class="mx-auto text-center mb-5 w-50">
-		<p id="BIENVENIDO" class="display-3">BIENVENIDO</p><br>
-		<p id="Texto" class="w-100 text-center mx-auto h3">Le aseguramos que cada cliente tendrá anteción personalizada y un 
-		excelente servicio.</p>
-		<p id="Slogan" class=" mt-5 h1" style="font:bold;">Déjanos Enamorar tu Paladar</p>		
+	<!-- Modals -->
 
+<!-- Combos -->
+<div class="modal fade" id="Promociones" tabindex="-1" role="dialog" aria-labelledby="Promociones" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Combos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Nombre</label>
+       		<input type="text" name="NombreC" id="AGMNombreC" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Costo</label>
+       		<input type="text" name="CostoC" id="AGMCostoC" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Descripción</label>
+       		<input type="text" name="DetallesC" id="AGMDetallesC" class="form-control  ">
+       	</div>	
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="NuevoCombo()">Actualizar Datos</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- Menus Nuevo-->
+<div class="modal fade" id="Menus" tabindex="-1" role="dialog" aria-labelledby="MenusE" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Menus</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Sección</label>
+       		<select class="form-control" id="AGMSeccion">
+        <option value="Combos">--</option>
+			  <option value="Desayunos">Desayunos</option>
+			  <option value="Almuerzos">Almuerzos</option>
+			  <option value="Bebidas">Bebidas</option>
+			  <option value="Postres">Postres</option>
+			</select>
+       	</div>	
+        <div class="container w-75 mx-auto mt-3">
+     		<label for="">Nombre</label>
+       		<input type="text" name="Mnombre" id="AGMNombre" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Costo</label>
+       		<input type="text" name="MCosto" id="AGMCosto" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Descripción</label>
+       		<input type="text" name="MDetalles" id="AGMDetalles" class="form-control  ">
+       	</div>	
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="NuevosD()">Actualizar Datos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Menus Editable-->
+<div class="modal fade" id="MenusE" tabindex="-1" role="dialog" aria-labelledby="Menus" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Menus</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Sección</label>
+       		<select class="form-control" id="AGMSeccionE">
+        <option>--</option>
+			  <option value="Desayunos">Desayunos</option>
+			  <option value="Almuerzos">Almuerzos</option>
+			  <option value="Bebidas">Bebidas</option>
+			  <option value="Postres">Postres</option>
+			</select>
+       	</div>	
+        <div class="container w-75 mx-auto mt-3">
+     		<label for="">Nombre</label>
+       		<input type="text" name="Mnombre" id="AGMNombreE" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Costo</label>
+       		<input type="text" name="MCosto" id="AGMCostoE" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Descripción</label>
+       		<input type="text" name="MDetalles" id="AGMDetallesE" class="form-control  ">
+       	</div>	
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" onclick="EliminarD()" >Eliminar Datos</button>
+        <button type="button" class="btn btn-primary" onclick="EditarD()">Actualizar Datoss</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Combos Editables  -->
+<div class="modal fade" id="PromocionesE" tabindex="-1" role="dialog" aria-labelledby="PromocionesE" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Combos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Nombre</label>
+       		<input type="text" name="NombreC" id="AGMNombreEC" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Costo</label>
+       		<input type="text" name="CostoC" id="AGMCostoEC" class="form-control ">
+       	</div>	
+       	<div class="container w-75 mx-auto mt-3">
+     		<label for="">Descripción</label>
+       		<input type="text" name="DetallesC" id="AGMDetallesEC" class="form-control  ">
+       	</div>	
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" onclick="EliminarD()" >Eliminar Datos</button>
+        <button type="button" class="btn btn-primary" onclick="EditarC()">Actualizar Datos</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!-- Soporte -->
+<div class="modal fade" id="Soporte" tabindex="-1" role="dialog" aria-labelledby="Soporte" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Soporte CAM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" >Actualizar Datos</button>
+      </div>
+    </div>
+  </div>
+</div> 
+	<div style="color: white;"  id="fecha"  class="d-flex mb-3 w-50 mx-auto text-center">
+		  <div class="p-2 bd-highlight mx-auto">
+		  	
+		  	<input class=" form-control " type="date"  aria-label="date" style="margin-right: 0px;">
+		  </div>
+  			<div class="p-2 bd-highlight mx-auto">
+
+  			 <button class="btn btn-outline-success mx-auto" style="color: white;" type="submit">Fecha a Consultar</button>
+  			</div>
+  			<div class="form-check form-check-inline text-center mx-auto">
+	  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+	  <label class="form-check-label" for="inlineCheckbox1"><small>Aprobado</small></label>
 	</div>
-	<p id="PROMOCIONES"></p>
-	<br>
-
-	<h3 class="text-center mt-5">COMBOS</h3>
-		<div class="text-center " >
-			<a data-toggle="modal" data-target="#Tcombos" id="aCombos" onclick="CargarTablasC();">
-			  <img src="combo1.jpg" class=" d-block w-25 mx-auto combos rounded">
-			</a>
-		</div>
-
-
-	<p id="MENU" ></p>
-	<style type="text/css">
-		@media (min-width: 0px) and (max-width: 450px) { 
-	#iframe {
-		width: 200px;
-		height: 250px;
-	}
-
-	#menu{
-		background: rgba(0,0,0,0.4); 
-	
-	}
-	.Menu{
-		width: 100px;
-		height: 100px;
-	}
-}
-
-@media (min-width: 450px) and (max-width: 10000px) { 
-	#iframe {
-		width: 450px;
-		height: 425px;
-	}
-	.Menu{
-		width: 250px;
-		height: 250px;
-	}
-
-}
-	</style>
-	<br>
-	<br>
-	<br>
-	
-	<div class="container mt-3">
-		<div class="col mx-auto">
-		<h3 class="text-center mb-5">MENÚ</h3>
-		</div>
-			<!-- Botones del Modal -->
-		<div class="col d-flex mb-5 ">
-			<div class="text-center mx-auto	 mr-3" >
-			<a data-toggle="modal" data-target="#Desayuno" id="aDesayuno" onclick="CargarTablasD();">
-			  <img src="desayunos.jpg" class="Menu  rounded">
-			</a>
-			<h4 class="text-center" >Desayuno</h4>
-			</div>
-			<div class="text-center  mx-auto ml-3">
-			<a data-toggle="modal" data-target="#Almuerzo" id="aAlmuerzo" onclick="CargarTablasA();" >
-			  <img src="almuerzos.jpg" class="Menu rounded">
-			</a>
-			<h4 class="text-center">Almuerzo</h4>
-			</div>
-		</div>
-			<div class="col d-flex mb-5">
-			<div class="text-center mx-auto mr-5">
-			<a data-toggle="modal" data-target="#Bebidas" id="aBebidas" onclick="CargarTablasB();" >
-			  <img src="bebidas.jpg" class="Menu rounded">
-			</a>
-			<h4 class="text-center" >Bebidas</h4>
-			</div>
-			<div class="text-center mx-auto mb-5 ml-3">
-			<a data-toggle="modal" data-target="#Postres" id="aPostres" onclick="CargarTablasP();">
-			  <img src="postres.jpg" class="Menu rounded">
-			</a>
-			<h4 class="text-center">Postres</h4>
-			</div>
-		</div>
-
-		</div>
-			<!-- Modal Combos -->
-			<div class="modal fade" id="Tcombos" tabindex="-1" role="dialog" aria-labelledby="TCombos1" aria-hidden="true">
-			  <div class="modal-dialog" role="document">
-			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
-			      <div class="modal-header" style="border: none;">
-			        <h5 class="modal-title" id="Tcombos1">Combos</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body" >
-					<table  class="table container w-75" style="color:white;">
-					  <thead>
-					    <tr class="w-75">
-					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
-					    </tr>
-					  </thead>
-					  <tbody id="TCombos" >
-					    
-					  </tbody>
-					</table>
-			      </div>
-			      <div class="modal-footer" style="border: none;">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-			<!-- Modal Desayuno -->
-			<div class="modal fade" id="Desayuno" tabindex="-1" role="dialog" aria-labelledby="DesayunoLabel" aria-hidden="true">
-			  <div class="modal-dialog" role="document">
-			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
-			      <div class="modal-header" style="border: none;">
-			        <h5 class="modal-title" id="DesayunoLabel">Desayuno</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body" >
-					<table  class="table container w-75" style="color:white;">
-					  <thead>
-					    <tr class="w-75">
-					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
-					    </tr>
-					  </thead>
-					  <tbody id="TDesayuno" >
-					    
-					  </tbody>
-					</table>
-			      </div>
-			      <div class="modal-footer" style="border: none;">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-			<!-- Modal Almuerzo -->
-			<div class="modal fade" id="Almuerzo" tabindex="-1" role="dialog" aria-labelledby="AlmuerzoLabel" aria-hidden="true">
-			  <div class="modal-dialog" role="document">
-			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
-			      <div class="modal-header" style="border: none;">
-			        <h5 class="modal-title" id="AlmuerzoLabel">Almuerzo</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-			        	<table  class="table container w-75" style="color:white;">
-					  <thead >
-					    <tr class="w-75">
-					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
-					    </tr>
-					  </thead>
-					  <tbody id="TAlmuerzo" >
-					    
-					  </tbody>
-					</table>
-			      </div>
-			      <div class="modal-footer" style="border: none;">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-			<!-- Modal Bebidas -->
-			<div class="modal fade" id="Bebidas" tabindex="-1" role="dialog" aria-labelledby="BebidasLabel" aria-hidden="true">
-			  <div class="modal-dialog" role="document">
-			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
-			      <div class="modal-header" style="border: none">
-			        <h5 class="modal-title" id="BebidaslLabel">Bebidas</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-			        	<table  class="table container w-75" style="color:white;">
-					  <thead >
-					    <tr class="w-75">
-					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
-					    </tr>
-					  </thead>
-					  <tbody id="TBebidas" >
-					    
-					  </tbody>
-					</table>
-			      </div>
-			      <div class="modal-footer" style="border: none">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-			<!-- Modal Postres -->
-			<div class="modal fade" id="Postres" tabindex="-1" role="dialog" aria-labelledby="PostresLabel" aria-hidden="true">
-			  <div class="modal-dialog" role="document" >
-			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
-			      <div class="modal-header" style="border: none;">
-			        <h5 class="modal-title" id="PostresLabel">Postres</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-			        	<table  class="table container w-75" style="color:white;">
-					  <thead >
-					    <tr class="w-75">
-					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
-					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
-					    </tr>
-					  </thead>
-					  <tbody id="TPostres" >
-					    
-					  </tbody>
-					</table>
-			      </div>
-			      <div class="modal-footer" style="border: none;">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+	  <label class="form-check-label" for="inlineCheckbox2"><small>Cancelado</small></label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+	  <label class="form-check-label" for="inlineCheckbox3"><small>En Proceso</small></label>
+	</div>
 	</div>
 
-	<!--Contacto-->
-	<p  id="CONTACTO"></p>
-	<br>
-	<h3 class="text-center mt-5 mb-5">Contacto</h3>
-		
-	<section class="row container w-75 mx-auto">
-		
-		<div class="col mb-5">
-			  <div class="form-group">
-				     <label for="exampleInputEmail1">Nombre</label>
-				     <input type="text" class="form-control" id="Nombre">
-			   </div>
-			  <div class="form-group">
-			   		 <label for="exampleInputPassword1">Correo</label>
-			   		 <input type="email" class="form-control" id="Email">
-			  </div>
-			   <div class="form-group">
-			  	     <label for="exampleInputEmail1">Telefono</label>
-			   		 <input type="text" class="form-control" id="Telefono">
-			   </div>
-			    <div class="form-group">
-			   		 <label for="asunto">Asunto</label>
-			   		 <input type="text" class="form-control" id="Asunto">
-			   </div>
-			    <div class="form-group">
-			    	 <label for="mensaje">Mensaje</label>
-			    	 <input type="text" class="form-control" id="Mensaje">
-			   </div>
-			   <button class="btn btn-outline-light">Enviar</button>
-		</div>
+	 
+    
+    
+	<div class="container text-center mt-3">
+		<h4 class=" mx-auto p-2" style="background: orange; width: 70%; margin-bottom: 0px;">Tabla de Encargos</h4>
+		<table  id="Pedidos" class="table mx-auto" style=" width: 70%;">
+			
+		  <thead class="" style="background: white;">
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Día</th>
+		      <th scope="col">Costo</th>
+		      <th scope="col">Proceso</th>
+		    </tr>
+		  </thead>
+		  <tbody style="color: white;">
+		    <tr>
+		      <th scope="row">451</th>
+		      <td>14/05/2019</td>
+		      <td>450$</td>
+		      <td>En proceso</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">424</th>
+		      <td>15/04/2019</td>
+		      <td>10$</td>
+		      <td>Aprobado</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">144</th>
+		      <td>15/06/2019</td>
+		      <td>50$</td>
+		      <td>Cancelado</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">451</th>
+		      <td>14/05/2019</td>
+		      <td>450$</td>
+		      <td>En proceso</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">424</th>
+		      <td>15/04/2019</td>
+		      <td>10$</td>
+		      <td>Aprobado</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">144</th>
+		      <td>15/06/2019</td>
+		      <td>50$</td>
+		      <td>Cancelado</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
 
-		<div class="col">
-			<iframe id="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1961.6530029856756!2d-66.89348654199803!3d10.476525598131383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a5936db0d150b%3A0xb8c87a3fb4cb7232!2sEramar+Cake+C.A!5e0!3m2!1ses!2sve!4v1558232856709!5m2!1ses!2sve" frameborder="0" style="border:0" allowfullscreen></iframe>
-			<p class="">Tlf:0000-0000000</p>
-		</div>
 
-	</section>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
 
-	<footer >
-		<div class=" text-center " style="" >
-		<a href="https://www.instagram.com/eramarcake" target="_blank"><img class="text-center mx-auto mt-3 " src="Instagram.png" width="100px"></a>
-		</div>
-		<p class="text-center">Todos los derechos reservados por  Crea, Analiza y Mueve el mundo ©2019 </p>
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 
-	</footer>
 
-<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-<script src="js.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
 <script>
-$(window).on('load', function() { // makes sure the whole site is loaded 
-  $('#status').fadeOut(); // will first fade out the loading animation 
-  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-  $('body').delay(350).css({'overflow':'visible'});
-})
-	
-$(document).ready(function() {
-  $('a[href^="#"]').click(function() {
-    var destino = $(this.hash);
-    if (destino.length == 0) {
-      destino = $('a[name="' + this.hash.substr(1) + '"]');
-    }
-    if (destino.length == 0) {
-      destino = $('html');
-    }
-    $('html, body').animate({ scrollTop: destino.offset().top }, 2000);
-    return false;
-  });
-});
-
-if (window.screen.width < 700) {
-
-	document.getElementById('logo').setAttribute("class","mx-auto text-center mb-5 w-100");
-	document.getElementById('BIENVENIDO').setAttribute("class","h2 mx-auto text-center");
-	document.getElementById('Texto').setAttribute("class","p mx-auto text-center");
-	document.getElementById('Contorno').setAttribute("class","container w-100 text-center p-5 mb-5 section");
-	document.getElementById('Slogan').setAttribute("class","h4 mx-auto text-center");
-	var x = document.getElementsByClassName("combos");
-	x[0].setAttribute("class","d-block w-50 mx-auto combos");
-
-}
-
-// Your web app's Firebase configuration
+  // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyC_pCTn1JIYdSgtn-WVfTolrFj-0dzIBqU",
     authDomain: "sistema-e83cf.firebaseapp.com",
@@ -396,48 +332,11 @@ if (window.screen.width < 700) {
     appId: "1:101698543766:web:ab404d01955b7309"
   };
   // Initialize Firebase
+
   firebase.initializeApp(firebaseConfig);
-  var db = firebase.firestore();
+var db = firebase.firestore();
 </script>
-
-<style type="text/css">
-	body {
-  overflow: hidden;
-}
-
-
-/* Preloader */
-
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  /* change if the mask should have another color then white */
-  z-index: 99;
-  /* makes sure it stays on top */
-}
-
-#status {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  left: 50%;
-  /* centers the loading animation horizontally one the screen */
-  top: 50%;
-  /* centers the loading animation vertically one the screen */
-  background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
-  /* path to your loading animation */
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: -100px 0 0 -100px;
-  /* is width and height divided by two */
-}
-</style>
-
-
+	<script src="js.js"></script>
 
 </body>
 </html>
