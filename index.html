@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Eramar Cake</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="shortcut icon" href="Logo.png" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -161,8 +162,7 @@
 					</table>
 			      </div>
 			      <div class="modal-footer" style="border: none;">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			      </div>
 			    </div>
 			  </div>
@@ -194,8 +194,7 @@
 					</table>
 			      </div>
 			      <div class="modal-footer" style="border: none;">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			      </div>
 			    </div>
 			  </div>
@@ -227,8 +226,7 @@
 					</table>
 			      </div>
 			      <div class="modal-footer" style="border: none;">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			      </div>
 			    </div>
 			  </div>
@@ -260,8 +258,7 @@
 					</table>
 			      </div>
 			      <div class="modal-footer" style="border: none">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			      </div>
 			    </div>
 			  </div>
@@ -293,13 +290,264 @@
 					</table>
 			      </div>
 			      <div class="modal-footer" style="border: none;">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary">Añadir al Pedido</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			      </div>
 			    </div>
 			  </div>
 			</div>
+
+			<!-- Menu de Pedidos -->
+
+			<div class="modal fade" id="MPedidos" tabindex="-1" role="dialog" aria-labelledby="MPedidos1" aria-hidden="true">
+			  <div class="modal-dialog" role="document" >
+			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
+			      <div class="modal-header" style="border: none;">
+			        <h5 class="modal-title" id="PostresLabel">Encargar Pedido</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        	<table  class="table container w-75" style="color:white;">
+					  <thead >
+					    <tr class="w-75">
+					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>	
+					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
+					    </tr>
+					  </thead>
+					  <tbody id="MPedidoss" >
+					    
+					  </tbody>
+					</table>
+			      </div>
+			      <div class="modal-footer" style="border: none;">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			        <button type="button" onclick="Pagar()" class="btn btn-primary" data-toggle="modal" data-target="#Pagar">Pagar Pedido</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Pagar -->
+
+			<div class="modal fade" id="Pagar" tabindex="-1" role="dialog" aria-labelledby="Pagar1" aria-hidden="true">
+			  <div class="modal-dialog" role="document" >
+			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
+			      <div class="modal-header" style="border: none;">
+			        <h5 class="modal-title" id="Pagar1">Pagar</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			     
+			      <div class="modal-body">
+			      	
+			        			<table  class="table container w-75" style="color:white;">
+								  <thead >
+								    <tr class="w-75">
+								      <th scope="col" style="font-size: 2vh;"><p>Encargado</p></th>
+								      <th scope="col" style="font-size: 2vh;"><p>Cantidad </p></th>
+								      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
+								      
+								    </tr>
+								  </thead>
+								  <tbody id="MEncargados" >
+									
+								  </tbody>
+								</table>
+								<table class="table container w-100" style="color:white;">
+									<tr>
+										<h4>Costo Total</h4>
+									</tr>    
+									<tr><td><h3 id="CostoT"></h3></td></tr>
+								</table>
+
+								<h3>Metodo de Pago</h3>
+							<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+									<ol class="carousel-indicators">
+								    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+								    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+								    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+								  </ol>
+								  <div class="carousel-inner">
+								    <div class="carousel-item active" data-interval="40000" >
+								           		<div class="container w-100 mb-5 bg-dark rounded">
+
+										<h3 class="mt-5">Transferencia</h3>
+										<br>
+										
+										<div class="d-flex bd-highlight mb-3">
+										  <div class="mr-auto p-2 bd-highlight">
+										<p>Banco de Venezuela</p>
+										  </div>
+										    <div class="ml-auto p-2 bd-highlight">
+										<p>N° Cuenta 0000000000</p>
+										 </div>
+										</div>
+
+										<div class="d-flex bd-highlight mb-3">
+										  <div class="mr-auto p-2 bd-highlight">
+										<p>Cuenta Ahorro</p>
+										  </div>
+										    <div class="ml-auto p-2 bd-highlight">
+										<p>CI 0000000000</p>
+										 </div>
+										</div>	
+
+										<div class="mt-5">
+											<label>Numero de Referencia</label>
+											<input type="text" name="NReferencia" id="NReferencia1">
+
+										</div>
+
+											<div class="mt-5">
+											<label>Nombre del Banco</label>
+											<input type="text" name="Nbanco" id="Nbanco1">
+											
+										</div>
+
+											<div class="mt-5">
+											<label>Nombre Completo</label>
+											<input type="text" name="CICompra" id="NC1">
+											
+										</div>
+
+											<div class="mt-5">
+											<label>Numero de Contacto</label>
+											<input type="text" name="CICompra" id="NDC1">
+											
+										</div>
+
+											<div class="mt-5">
+											<label>Día de Retiro del Pedido</label>
+											<input type="datetime-local" name="DiaT" id="DiaT1" min="2019-06-15" >
+											
+										</div>
+										<br><br><br>
+									</div> 
+
+								    </div>
+								    <div class="carousel-item " data-interval="40000">
+		
+
+								    		<div class="container w-100 mb-5 bg-dark rounded" id>
+
+										<h3 class="mt-5">Pago Movil</h3>
+										<br>
+										
+										<div class="d-flex bd-highlight mb-3">
+										  <div class="mr-auto p-2 bd-highlight">
+										<p>Banco de Venezuela</p>
+										  </div>
+										    <div class="ml-auto p-2 bd-highlight">
+										<p>N° Telefono 00000000</p>
+										 </div>
+										</div>
+
+										<div class="d-flex bd-highlight mb-3">
+										  
+										    <div class="ml-auto p-2 bd-highlight">
+										<p>CI 0000000000</p>
+										 </div>
+										</div>	
+										<div class="mt-5">
+											<label>Numero de Referencia</label>
+											<input type="text" name="NReferencia" id="NReferencia0">
+
+										</div>
+
+											<div class="mt-5">
+											<label>Nombre del Banco</label>
+											<input type="text" name="Nbanco" id="Nbanco0">
+											
+										</div>
+
+											<div class="mt-5">
+											<label>Nombre Completo</label>
+											<input type="text" name="CICompra" id="NC0">
+											
+										</div>
+
+											<div class="mt-5">
+											<label>Numero de Contacto</label>
+											<input type="text" name="CICompra" id="NDC0">
+											
+										</div>
+
+											<div class="mt-5">
+											<label>Día de Retiro del Pedido</label>
+											<input type="datetime-local" name="DiaT" id="DiaT0" min="2019-06-15" >
+											
+										</div>
+										<br><br><br>
+									</div>
+									
+								    </div>
+								    <div class="carousel-item" data-interval="40000">
+				
+								    		  	<div class="container w-100 mb-5 bg-dark rounded">
+
+										<h3 class="mt-5">Punto de Venta</h3>
+										<br>
+										
+										<div class="d-flex bd-highlight mb-3">
+										  <div class="mr-auto p-2 bd-highlight">
+										<p>Funcionando</p>
+										  </div>
+										    <div class="ml-auto p-2 bd-highlight">
+										<p>Punto de Venta Banesco</p>
+										 </div>
+										</div>
+
+										<div class="d-flex bd-highlight mb-3">
+										  <div class="mr-auto p-2 bd-highlight">
+										<p>Lineas con inconvenientes:</p>
+										  </div>
+										</div>
+										<div class="mt-5">
+											<label>Nombre Completo</label>
+											<input type="text" name="CICompra" id="NC">
+											
+										</div>
+
+											<div class="mt-5">
+											<label>Numero de Contacto</label>
+											<input type="text" name="CICompra" id="NDC">
+											
+										</div>
+
+											<div class="mt-5">
+											<label>Día de Retiro del Pedido</label>
+											<input type="datetime-local" name="DiaT" id="DiaT" min="2019-06-15" >
+											
+										</div>
+										<br><br><br>	
+									</div>
+								    </div>
+								  </div>
+								 
+								</div >
+
+								  
+					</div>
+
+			      <div class="modal-footer" style="border: none;">
+
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			        <button type="button" onclick="Enviar()" class="btn btn-primary" data-dismiss="modal">Registrar Pago</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="mx-auto text-center">
+				<button data-toggle="modal" data-target="#MPedidos" id="MPedidos1" class="btn btn-outline-success" onclick="Comprar()">Enviar Pedido</button>
+			</div>
 	</div>
+
+
+		
 
 	<!--Contacto-->
 	<p  id="CONTACTO"></p>
