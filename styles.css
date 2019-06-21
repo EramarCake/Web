@@ -1,3 +1,4 @@
+    
 @media (min-width: 0px) and (max-width: 450px) { 
 	#iframe {
 		width: 200px;
@@ -40,3 +41,7 @@
 
 }
 
+ .bg-pago{
+
+ 	background-color: rgba(0,0,0,0.7);
+ }
