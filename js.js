@@ -773,13 +773,22 @@ var controlP = false;
 				var textb = document.createTextNode(Pedidos[a].TipoP);
 				var textc = document.createTextNode(Pedidos[a].DiaT);
 				var textf = document.createTextNode(Pedidos[a].NombreCom);
-		
+				var	tdi = document.createElement("button");
+				var	tdg = document.createElement("td");
+				var textg = document.createTextNode("Ver Detalles");
+				tdg.appendChild(tdi);
+				tdi.appendChild(textg);
+				tdi.className ='class="btn btn-primary"';
+				tdi.type ="button";
+				tdi.setAttribute("data-toggle","modal");
+				tdi.setAttribute("data-target","#informe");
 				var	tr = document.createElement("tr");
 				
 				var	tda = document.createElement("td");
 				var	tdb = document.createElement("td");
 				var	tdc = document.createElement("td");
 				var	tdf = document.createElement("td");
+				var	tdg = document.createElement("td");
 					tda.appendChild(texta);
 					tdb.appendChild(textb);
 					tdc.appendChild(textc);
@@ -790,6 +799,7 @@ var controlP = false;
 					tr.appendChild(tdf);
 					tr.appendChild(tdb);
 					tr.appendChild(tda);
+					tr.appendChild(tdi);
 				
 						a++;	
 					}
