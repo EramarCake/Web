@@ -13,7 +13,7 @@
 
 </head>
 <header><img src="Fondo.png" style="width: 100%; height: 100vh; position: fixed; top: 0px; left: 0px; z-index: -1;"></header>
-<body style="font-family: 'Poppins', sans-serif;
+<body onload="ImprimirPedidos()" style="font-family: 'Poppins', sans-serif;
 ;
 ">
 
@@ -152,7 +152,7 @@
        	</div>	
         <div class="container w-75 mx-auto mt-3">
      		<label for="">Nombre</label>
-       		<input type="text" name="Mnombre" id="AGMNombreE" class="form-control ">
+       		<input type="text"  name="Mnombre" id="AGMNombreE" class="form-control" onchange="VerificarM() ">
        	</div>	
        	<div class="container w-75 mx-auto mt-3">
      		<label for="">Costo</label>
@@ -185,7 +185,7 @@
       <div class="modal-body">
       	<div class="container w-75 mx-auto mt-3">
      		<label for="">Nombre</label>
-       		<input type="text" name="NombreC" id="AGMNombreEC" class="form-control ">
+       		<input type="text" name="NombreC" id="AGMNombreEC" class="form-control" onchange="VerificarC()">
        	</div>	
        	<div class="container w-75 mx-auto mt-3">
      		<label for="">Costo</label>
@@ -200,7 +200,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-danger" onclick="EliminarD()" >Eliminar Datos</button>
-        <button type="button" class="btn btn-primary" onclick="EditarD()">Actualizar Datos</button>
+        <button type="button" class="btn btn-primary" onclick="EditarC()">Actualizar Datos</button>
       </div>
     </div>
   </div>
@@ -226,6 +226,7 @@
     </div>
   </div>
 </div> 
+<!--
 	<div style="color: white;"  id="fecha"  class="d-flex mb-3 w-50 mx-auto text-center">
 		  <div class="p-2 bd-highlight mx-auto">
 		  	
@@ -248,62 +249,61 @@
 	  <label class="form-check-label" for="inlineCheckbox3"><small>En Proceso</small></label>
 	</div>
 	</div>
-
+-->
 	 
     
     
 	<div class="container text-center mt-3">
 		<h4 class=" mx-auto p-2" style="background: orange; width: 70%; margin-bottom: 0px;">Tabla de Encargos</h4>
-		<table  id="Pedidos" class="table mx-auto" style=" width: 70%;">
+		<table   class="table mx-auto" style=" width: 70%;">
 			
 		  <thead class="" style="background: white;">
 		    <tr>
-		      <th scope="col">#</th>
-		      <th scope="col">Día</th>
+		      <th scope="col">Dia de Entrega</th>
+		      <th scope="col">Comprador</th>
+		      <th scope="col">Tipo de Pago</th>
 		      <th scope="col">Costo</th>
-		      <th scope="col">Proceso</th>
+          <th scope="col">Informes</th>
 		    </tr>
 		  </thead>
-		  <tbody style="color: white;">
-		    <tr>
-		      <th scope="row">451</th>
-		      <td>14/05/2019</td>
-		      <td>450$</td>
-		      <td>En proceso</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">424</th>
-		      <td>15/04/2019</td>
-		      <td>10$</td>
-		      <td>Aprobado</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">144</th>
-		      <td>15/06/2019</td>
-		      <td>50$</td>
-		      <td>Cancelado</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">451</th>
-		      <td>14/05/2019</td>
-		      <td>450$</td>
-		      <td>En proceso</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">424</th>
-		      <td>15/04/2019</td>
-		      <td>10$</td>
-		      <td>Aprobado</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">144</th>
-		      <td>15/06/2019</td>
-		      <td>50$</td>
-		      <td>Cancelado</td>
-		    </tr>
+		  <tbody id="TablaPedidos" style="color: white;">
+		   
 		  </tbody>
 		</table>
 	</div>
+
+<!-- Modal -->
+<div class="modal fade" id="informe" tabindex="-1" role="dialog" aria-labelledby="infomre1" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infomre1">Ricardo Contreras</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h2>Costo Total de 80.000</h2>
+        <br>
+        <h3>Detalles de Pedido</h3>
+        <br>
+        <div class="border">
+          <h4>1 Hamburguesa</h4>
+        </div>
+        <br>
+        <h3>Pago por Punto de Venta</h3>
+        <br>
+
+        <b>Estado del Pedido: en Proceso</b>
+      </div>
+      <div class="modal-footer">
+        <small>Entrega 15/06/02 a las 13:30</small>
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -336,7 +336,7 @@
   firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 </script>
-	<script src="js.js"></script>
+	<script src="../Web/js.js"></script>
 
 </body>
 </html>
