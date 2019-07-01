@@ -3,7 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Enamora tu paladar con Eramarcake" />
+	<meta name="keywords" content="Enamora,paladar,Eramarcake,Restarutante,desayunos,almuerzos,pizzas,hamburguesas,santa monica" />
+
 	<title>Eramar Cake</title>
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="shortcut icon" href="Logo.png" />
@@ -111,13 +115,13 @@
 			<a data-toggle="modal" data-target="#Desayuno" id="aDesayuno" onclick="CargarTablasD();">
 			  <img src="desayunos.jpg" class="Menu  rounded">
 			</a>
-			<h4 class="text-center" >Desayuno</h4>
+			<h4 class="text-center" >Desayunos</h4>
 			</div>
 			<div class="text-center  mx-auto ml-3">
-			<a data-toggle="modal" data-target="#Almuerzo" id="aAlmuerzo" onclick="CargarTablasA();" >
-			  <img src="almuerzos.jpg" class="Menu rounded">
+			<a data-toggle="modal" data-target="#Comidas" id="aComidas" onclick="CargarTablasCA();" >
+			  <img src="comidas.jpg" class="Menu rounded">
 			</a>
-			<h4 class="text-center">Almuerzo</h4>
+			<h4 class="text-center">Comidas</h4>
 			</div>
 		</div>
 			<div class="col d-flex mb-5">
@@ -201,11 +205,59 @@
 			</div>
 
 			<!-- Modal Almuerzo -->
-			<div class="modal fade" id="Almuerzo" tabindex="-1" role="dialog" aria-labelledby="AlmuerzoLabel" aria-hidden="true">
-			  <div class="modal-dialog" role="document">
+			<div class="modal fade" id="Comidas" tabindex="-1" role="dialog" aria-labelledby="AlmuerzoLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
 			      <div class="modal-header" style="border: none;">
-			        <h5 class="modal-title" id="AlmuerzoLabel">Almuerzo</h5>
+			        <h5 class="modal-title" id="AlmuerzoLabel">Comidas</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body ">
+			      	<div class="mx-auto text-center col">
+			      	<div class="row text-center ">
+			      	<a id="img1" class="mt-5 ml-3 mr-5 mx-auto"> 
+			      		
+			      		<p>Almuerzos</p> 
+			      		<img id="aAlmuerzos" src="almuerzos.jpg" data-toggle="modal" data-target="#Almuerzos" class="Menu rounded" onclick="CargarTablasA();" style="width: 150px; height: 150px;"></a>
+			      		
+			      		</a>	
+					<a class="ml-3 mt-5 mr-5 mx-auto">	
+						
+			      		<p>Pizzas</p> 
+			      		<img id="aPizzas" src="pizzas.jpg" data-toggle="modal" data-target="#Pizzas" class="Menu rounded" onclick="CargarTablasPZ();"  style="width: 150px; height: 150px;"></a>
+			      		
+			      	</a>	
+			      	</div>
+			        <!--	<table  class="table container w-75" style="color:white;">
+					  <thead >
+					    <tr class="w-75">
+					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
+					    </tr>
+					  </thead>
+					  <tbody id="TAlmuerzo" >
+					    
+					  </tbody>
+					</table> -->
+					</div>
+			      </div>
+			      <div class="modal-footer" style="border: none;">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Modal Almuerzos -->
+			<div class="modal fade" id="Almuerzos" tabindex="-1" role="dialog" aria-labelledby="BebidasLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
+			      <div class="modal-header" style="border: none">
+			        <h5 class="modal-title" id="BebidaslLabel">Almuerzos</h5>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
@@ -225,7 +277,69 @@
 					  </tbody>
 					</table>
 			      </div>
-			      <div class="modal-footer" style="border: none;">
+			      <div class="modal-footer" style="border: none">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- Modal Pizzas -->
+			<div class="modal fade" id="Pizzas" tabindex="-1" role="dialog" aria-labelledby="BebidasLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
+			      <div class="modal-header" style="border: none">
+			        <h5 class="modal-title" id="BebidaslLabel">Pizzas</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        	<table  class="table container w-75" style="color:white;">
+					  <thead >
+					    <tr class="w-75">
+					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
+					    </tr>
+					  </thead>
+					  <tbody id="TPizzas" >
+					    
+					  </tbody>
+					</table>
+			      </div>
+			      <div class="modal-footer" style="border: none">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Modal Info -->
+			<div class="modal fade" id="Info" tabindex="-1" role="dialog" aria-labelledby="BebidasLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content" style="background-image: url('Tabla.jpg');">
+			      <div class="modal-header" style="border: none">
+			        <h5 class="modal-title" id="BebidaslLabel">Pizzas</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        	<table  class="table container w-75" style="color:white;">
+					  <thead >
+					    <tr class="w-75">
+					      <th scope="col" style="font-size: 2vh;"><p>#</p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Nombre </p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Detalles</p></th>
+					      <th scope="col" style="font-size: 2vh;"><p>Costo</p></th>
+					    </tr>
+					  </thead>
+					  <tbody id="TInfo" >
+					    
+					  </tbody>
+					</table>
+			      </div>
+			      <div class="modal-footer" style="border: none">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			      </div>
 			    </div>
@@ -419,11 +533,7 @@
 											
 										</div>
 
-											<div class="mt-5">
-											<label>Día de Retiro del Pedido</label>
-											<input class="w-75" type="datetime-local" name="DiaT" id="DiaT1" min="2019-06-15" >
 											
-										</div>
 										<br><br><br>
 									</div> 
 
@@ -475,11 +585,7 @@
 											
 										</div>
 
-											<div class="mt-5">
-											<label>Día de Retiro del Pedido</label>
-											<input type="datetime-local" class="w-75" name="DiaT" id="DiaT0" min="2019-06-15" >
 											
-										</div>
 										<br><br><br>
 									</div>
 									
@@ -517,11 +623,7 @@
 											
 										</div>
 
-											<div class="mt-5">
-											<label>Día de Retiro del Pedido</label>
-											<input type="datetime-local" name="DiaT" class="w-75" id="DiaT" min="2019-06-15" >
 											
-										</div>
 										<br><br><br>	
 									</div>
 								    </div>
